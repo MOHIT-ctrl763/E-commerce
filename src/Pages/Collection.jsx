@@ -26,7 +26,7 @@ const Collection = () => {
       setSubcategory((prev) => [...prev, e.target.value]);
     }
   };
-console.log(showSearch,search);
+// console.log(showSearch,search);
 
   const applyfilter = () => {
     let productscopy = products.slice();

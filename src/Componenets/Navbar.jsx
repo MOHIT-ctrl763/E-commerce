@@ -7,13 +7,13 @@ import cart from '../assets/frontend_assets/cart_icon.png'
 import menu from '../assets/frontend_assets/menu_icon.png'
 import drop_down from '../assets/frontend_assets/dropdown_icon.png'
 import { ShopContext } from '../Context/ShopContext'
-
+import brand from '../assets/frontend_assets/brand.png'
 const Navbar = () => {
   const [visible,setVisible] = useState(false)
-  const {setShowSearch,showSearch} = useContext(ShopContext)
+  const {setShowSearch,showSearch , cartcount} = useContext(ShopContext)
   return (
     <div className='flex items-center justify-between py-5 font-medium'>
-    <Link to='/'>  <img src={assets.logo} className='w-36' alt="" /></Link>
+    <Link to='/'>  <img src={brand} className='w-36' alt="" /></Link>
       <ul className='hidden sm:flex gap-5 text-sm text-gray-700 '>
         <NavLink to='/' className='flex flex-col items-center gap-1'>
             <p>Home</p>
@@ -48,7 +48,7 @@ const Navbar = () => {
           </div>
           <Link to='/cart' className='relative'>
            <img src={cart} className='w-5 min-w-5' alt="" />
-           <p className=' absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[-8px] '>8</p>
+           <p className=' absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[-8px] '>{cartcount}</p>
           </Link>
           <img onClick={()=>{
             setVisible(true)
